@@ -32,8 +32,8 @@ public class UserServiceTest {
 		List<User> users = bankServices.getListUserWithoutAdmin();
 		// Then
 		assertNotNull(users);
-		assertEquals("Il y a plus de 9 utilisateurs, le webservice \"userControl\" ne sont pas correctement configuré",
-				9, users.size());
+		assertEquals("Il y a plus de 8 utilisateurs, le webservice \"userControl\" ne sont pas correctement configuré",
+				8, users.size());
 		assertNotEquals("Admin", users.get(0).getLname());
 
 	}
