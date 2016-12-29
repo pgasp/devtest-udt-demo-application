@@ -1,6 +1,6 @@
 package com.ca.devtest.lisabank.demo;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class UserServiceTest {
          // Then
         assertNotNull(users);
         assertEquals("Il y a plus de 7 utilisateurs, le webservice \"userControl\" ne sont pas correctement configuré",6,users.size());
-        assertEquals("Admin",users.get(0).getLname());
+        assertNotEquals("Admin",users.get(0).getLname());
        
     }
 }
