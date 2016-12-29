@@ -20,12 +20,5 @@ public interface BankService {
 	 * @return
 	 */
 	public boolean deleteUser(String username);
-
-	/**
-	 * @param userName
-	 * @param password
-	 * @return
-	 */
-	public String authenticate(String userName, String password);
 	
 }

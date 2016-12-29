@@ -69,10 +69,4 @@ public class LisaBankService implements BankService {
 		users.remove(0);
 		return users;
 	 }
-	
-	public String authenticate(String userName, String password){
-		
-		return tokenBean.getNewToken(userName, password);
-		
-	}
 }
