@@ -13,6 +13,7 @@ import com.ca.devtest.lisabank.wsdl.Account;
 import com.ca.devtest.lisabank.wsdl.AccountType;
 import com.ca.devtest.lisabank.wsdl.EJB3AccountControlBean;
 import com.ca.devtest.lisabank.wsdl.EJB3UserControlBean;
+import com.ca.devtest.lisabank.wsdl.TokenBean;
 import com.ca.devtest.lisabank.wsdl.User;
 
 /**
@@ -26,6 +27,9 @@ public class LisaBankService implements BankService {
 	 @Autowired
 	 	private EJB3AccountControlBean accountControlBean;
 	 
+	 @Autowired
+	 	private TokenBean tokenBean;
+	 
 	 /* (non-Javadoc)
 	 * @see com.ca.devtest.lisabank.demo.business.BankService#createUserWithCheckingAccount(java.lang.String, java.lang.String, int)
 	 */
@@ -37,13 +41,24 @@ public class LisaBankService implements BankService {
 			  account= new Account();
 			 account.setBalance(new BigDecimal(amount));
 			 account.setType(AccountType.CHECKING);
-			 accountControlBean.addAccount(user.getLogin(), account);
+			 	
+			 String accountId=accountControlBean.addAccount(user.getLogin(), account);
+			 account=accountControlBean.getAccount(accountId);
 		 }
 		 
 		 return account;
 	 }
 	 
-	   
+	public boolean deleteUser(String username){
+		
+		boolean result=false;
+		 if(null!=userControlBean.getUser(username)){
+			result=userControlBean.deleteUser(username);
+			
+		 }
+		 
+		 return result;
+	 }
 	 /* (non-Javadoc)
 	 * @see com.ca.devtest.lisabank.demo.business.BankService#getListUserWithoutAdmin()
 	 */
@@ -54,4 +69,10 @@ public class LisaBankService implements BankService {
 		users.remove(0);
 		return users;
 	 }
+	
+	public String authenticate(String userName, String password){
+		
+		return tokenBean.getNewToken(userName, password);
+		
+	}
 }
