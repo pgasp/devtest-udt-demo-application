@@ -1,4 +1,4 @@
-package com.ca.devtest.lisabank.demo;
+package com.ca.devtest.lisabank.demo.sv;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.ca.devtest.lisabank.demo.LisaBankClientApplication;
 import com.ca.devtest.lisabank.demo.business.BankService;
 import com.ca.devtest.lisabank.wsdl.User;
 

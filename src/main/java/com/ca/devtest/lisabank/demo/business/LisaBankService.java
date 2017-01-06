@@ -36,7 +36,7 @@ public class LisaBankService implements BankService {
 	@Override
 	public Account createUserWithCheckingAccount(String username, String password, int amount){
 		 Account account=null;
-		 if(null==userControlBean.getUser(username)){
+		
 			 User user=userControlBean.addUser(username, password);
 			  account= new Account();
 			 account.setBalance(new BigDecimal(amount));
@@ -44,20 +44,20 @@ public class LisaBankService implements BankService {
 			 	
 			 String accountId=accountControlBean.addAccount(user.getLogin(), account);
 			 account=accountControlBean.getAccount(accountId);
-		 }
+		
 		 
 		 return account;
 	 }
 	 
+	/* (non-Javadoc)
+	 * @see com.ca.devtest.lisabank.demo.business.BankService#deleteUser(java.lang.String)
+	 */
 	public boolean deleteUser(String username){
 		
-		boolean result=false;
-		 if(null!=userControlBean.getUser(username)){
-			result=userControlBean.deleteUser(username);
+			return userControlBean.deleteUser(username);
 			
-		 }
+		
 		 
-		 return result;
 	 }
 	 /* (non-Javadoc)
 	 * @see com.ca.devtest.lisabank.demo.business.BankService#getListUserWithoutAdmin()
