@@ -24,7 +24,7 @@ public class UserServiceTest {
 	private BankService bankServices;
 	
 
-	@Test
+	//@Test
 	public void getListUser() {
 		// Given
 
