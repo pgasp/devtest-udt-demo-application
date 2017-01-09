@@ -19,8 +19,8 @@ import com.ca.devtest.lisabank.wsdl.Account;
  * @author gaspa03
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = LisaBankClientApplication.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes = LisaBankClientApplication.class)
 public class AccountServiceTest {
 	@Autowired
 	private BankService bankServices;
