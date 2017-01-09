@@ -78,7 +78,7 @@
 						<wsdlUrl>http://localhost:9080/itkoExamples/TokenBean?wsdl</wsdlUrl>
 
 					</wsdlUrls>
-					<sourceDestDir>target/generated-sources/wsdlimport</sourceDestDir>
+					<sourceDestDir>src/main/generated-sources/wsdlimport</sourceDestDir>
 					<!-- For accessing the imported schema, see https://netbeans.org/bugzilla/show_bug.cgi?id=241570 -->
 					<vmArgs>
 						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
@@ -104,7 +104,7 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>target/generated-sources/wsdlimport</source>
+								<source>src/main/generated-sources/wsdlimport</source>
 							</sources>
 						</configuration>
 					</execution>
