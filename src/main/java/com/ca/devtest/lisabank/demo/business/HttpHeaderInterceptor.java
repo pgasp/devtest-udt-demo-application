@@ -26,8 +26,8 @@ public class HttpHeaderInterceptor extends AbstractPhaseInterceptor<Message> {
 	}
 	
 	private void authenticate(){
-		if(null==token)
-			token=tokenService.getNewToken("gpaco", "gpaco");
+		//if(null==token)
+			//token=tokenService.getNewToken("gpaco", "gpaco");
 	}
 
 }
