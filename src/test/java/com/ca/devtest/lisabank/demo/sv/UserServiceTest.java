@@ -33,7 +33,7 @@ public class UserServiceTest {
 	@Rule
 	public VirtualServicesRule rules = new VirtualServicesRule();
 	
-	@DevTestVirtualService(serviceName = "EJB3UserControlBean", port = 9081, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUser/EJB3UserControlBean", requestDataProtocol = {
+	@DevTestVirtualService(serviceName = "UserServiceTest-EJB3UserControlBean", port = 9081, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUser/EJB3UserControlBean", requestDataProtocol = {
 			@Protocol(ProtocolType.DPH_SOAP) })
 	
 	@Test
