@@ -15,16 +15,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.ca.devtest.lisabank.demo.business.BankService;
 import com.ca.devtest.lisabank.wsdl.User;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = LisaBankClientApplication.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = LisaBankClientApplication.class)
 
 public class UserServiceTest {
 
-	//@Autowired
+	@Autowired
 	private BankService bankServices;
 	
 
-	//@Test
+
+@Test
 	public void getListUser() {
 		// Given
 
