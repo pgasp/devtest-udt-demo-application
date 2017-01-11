@@ -39,7 +39,7 @@ public class UserServiceTest {
 		// Given
 
 		// When
-		List<User> users = bankServices.getListUserWithoutAdmin();
+		List<User> users = bankServices.getListUser();
 		// Then
 		assertNotNull(users);
 		assertEquals("Il y a plus de 8 utilisateurs, le webservice \"userControl\" n'est pas correctement configuré",
