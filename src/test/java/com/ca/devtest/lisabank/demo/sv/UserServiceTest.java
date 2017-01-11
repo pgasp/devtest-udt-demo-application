@@ -31,9 +31,9 @@ public class UserServiceTest {
 	private BankService bankServices;
 	@Rule
 	public VirtualServicesRule rules = new VirtualServicesRule();
-	
-	@DevTestVirtualService(serviceName = "UserServiceTest-EJB3UserControlBean", port = 9081, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUser/EJB3UserControlBean", requestDataProtocol = {
+	@DevTestVirtualService(serviceName = "UserServiceTest-EJB3UserControlBean", port = 9080, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUser/EJB3UserControlBean", requestDataProtocol = {
 			@Protocol(ProtocolType.DPH_SOAP) })
+
 	@Test
 	public void getListUser() {
 		// Given
@@ -42,9 +42,30 @@ public class UserServiceTest {
 		List<User> users = bankServices.getListUser();
 		// Then
 		assertNotNull(users);
-		assertEquals("Il y a plus de 8 utilisateurs, le webservice \"userControl\" n'est pas correctement configuré",
-				8, users.size());
-		assertNotEquals("Admin", users.get(0).getLname());
+		assertEquals(9, users.size());
+		
+		User user=getUser("Admin", users);
+		assertNotNull(user);
+		
+		assertEquals("Admin", user.getLname());
 
+	}
+	
+	
+	/**
+	 * @param name
+	 * @param users
+	 * @return
+	 */
+	private User getUser(String name,List<User> users ){
+		
+		User result= null;
+		for (User user : users) {
+			if(name.equals(user.getLname())){
+				result=user;
+			}
+				
+		}
+		return result;
 	}
 }

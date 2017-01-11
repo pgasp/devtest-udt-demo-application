@@ -101,7 +101,17 @@
 				<roleKey>REGULAR</roleKey>
 				<ssn>614-40-1053</ssn>
 			</return>
-
+			<return>
+				<email>wpiece@mycompany.com</email>
+				<fname>Warren</fname>
+				<lname>Piece</lname>
+				<login>wpiece</login>
+				<newFlag>true</newFlag>
+				<phone>455-3232</phone>
+				<pwd>/UuJ0MeQFuRNHog0H0hR+Y82B5w=</pwd>
+				<roleKey>REGULAR</roleKey>
+				<ssn>546-71-4973</ssn>
+			</return>
 		</ns2:listUsersResponse>
 	</env:Body>
 </env:Envelope>

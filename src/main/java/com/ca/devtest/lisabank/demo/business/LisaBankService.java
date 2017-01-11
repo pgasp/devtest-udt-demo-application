@@ -77,7 +77,7 @@ public class LisaBankService implements BankService {
 	public  List<User> getListUser(){
 		
 		List<User> users= userControlBean.listUsers();
-		users.remove(0);
+		
 		return users;
 	 }
 }
