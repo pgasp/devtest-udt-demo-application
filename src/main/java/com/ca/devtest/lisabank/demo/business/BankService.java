@@ -10,10 +10,13 @@ public interface BankService {
 	Account createUserWithCheckingAccount(String username, String password, int amount);
 
 	/**
-	 * @return List of User without Admin User
+	 * @return List of Users without Admin User
 	 */
 	List<User> getListUserWithoutAdmin();
-
+	/**
+	 * @return List of Users
+	 */
+	public  List<User> getListUser();
 	
 	/**
 	 * @param username

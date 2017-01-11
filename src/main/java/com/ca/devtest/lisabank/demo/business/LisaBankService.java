@@ -69,4 +69,15 @@ public class LisaBankService implements BankService {
 		users.remove(0);
 		return users;
 	 }
+	
+	 /* (non-Javadoc)
+	 * @see com.ca.devtest.lisabank.demo.business.BankService#getListUserWithoutAdmin()
+	 */
+	@Override
+	public  List<User> getListUser(){
+		
+		List<User> users= userControlBean.listUsers();
+		users.remove(0);
+		return users;
+	 }
 }
