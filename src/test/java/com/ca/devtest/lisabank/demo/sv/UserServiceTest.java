@@ -1,8 +1,7 @@
 package com.ca.devtest.lisabank.demo.sv;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -31,9 +30,9 @@ public class UserServiceTest {
 	private BankService bankServices;
 	@Rule
 	public VirtualServicesRule rules = new VirtualServicesRule();
+
 	@DevTestVirtualService(serviceName = "UserServiceTest-EJB3UserControlBean", port = 9080, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUser/EJB3UserControlBean", requestDataProtocol = {
 			@Protocol(ProtocolType.DPH_SOAP) })
-
 	@Test
 	public void getListUser() {
 		// Given
@@ -50,7 +49,25 @@ public class UserServiceTest {
 		assertEquals("Admin", user.getLname());
 
 	}
-	
+	@DevTestVirtualService(serviceName = "UserServiceTest-EJB3UserControlBean2", port = 9080, basePath = "/itkoExamples/EJB3UserControlBean", rrpairsFolder = "UserServiceTest/getListUserKO/EJB3UserControlBean", requestDataProtocol = {
+			@Protocol(ProtocolType.DPH_SOAP) })
+
+	@Test
+	public void getListUserKO() {
+		// Given
+
+		// When
+		List<User> users = bankServices.getListUser();
+		// Then
+		assertNotNull(users);
+		assertNotEquals(9, users.size());
+		
+		User user=getUser("Piece", users);
+		assertNotNull(user);
+		
+		assertEquals("Piece", user.getLname());
+
+	}
 	
 	/**
 	 * @param name
